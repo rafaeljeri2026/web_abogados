@@ -1,0 +1,15 @@
+html,
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: #202020;
+}
+
+app-root {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}

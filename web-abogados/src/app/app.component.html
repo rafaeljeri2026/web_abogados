@@ -1,0 +1,149 @@
+<header class="topbar" id="inicio">
+  <div class="container">
+    <span>Contáctanos</span>
+    <a href="tel:985204125">98 520 41 25</a>
+    <a href="mailto:lydiagarciaalvarez@yahoo.es">lydiagarciaalvarez&#64;yahoo.es</a>
+    <a href="#">Envíenos un mensaje a través de WhatsApp</a>
+  </div>
+</header>
+
+<nav class="navbar">
+  <div class="container nav-content">
+    <div class="logo-wrap">
+      <img src="assets/site/logo.png" alt="Lydia García, Abogada">
+    </div>
+    <div class="menu">
+      @for (item of menu; track item.label) {
+        <a [href]="item.href" [class.active]="activeMenuHref === item.href" (click)="setActive(item.href)">{{ item.label }}</a>
+      }
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h1>Lydia García, Abogada</h1>
+    <p>Abogada especializada en derecho familiar</p>
+    <a class="btn" href="#contacto">Póngase en contacto</a>
+  </div>
+</section>
+
+<main class="container">
+  <section id="conocenos">
+    <h2>Conócenos</h2>
+    <div class="quick-links">
+      @for (item of conocenosLinks; track item.label) {
+        <a [href]="item.href">{{ item.label }}</a>
+      }
+    </div>
+    <div class="conocenos-grid">
+      @for (item of conocenosCards; track item.titulo) {
+        <article class="conocenos-card">
+          <img [src]="item.img" [alt]="item.titulo">
+          <h3>{{ item.titulo }}</h3>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="grid">
+      @for (item of servicios; track item) {
+        <a class="card" href="#">
+          <img [src]="item.img" [alt]="item.titulo">
+          <h3>{{ item.titulo }}</h3>
+        </a>
+      }
+    </div>
+    <a class="see-more" href="#">Ver más</a>
+  </section>
+
+  <section id="galeria">
+    <h2>Galería de imágenes</h2>
+    <div class="gallery">
+      @for (foto of galeria; track foto.titulo) {
+        <figure class="gallery-card">
+          <img [src]="foto.img" [alt]="foto.titulo">
+          <figcaption>{{ foto.titulo }}</figcaption>
+        </figure>
+      }
+    </div>
+    <a class="see-more" href="#">Ver más</a>
+  </section>
+
+  <section id="videos">
+    <h2>Galería de vídeos</h2>
+    <p>Próximamente añadiremos esta sección en la réplica Angular.</p>
+  </section>
+
+  <section id="noticias">
+    <h2>Noticias</h2>
+    <div class="news-grid">
+      @for (item of noticias; track item) {
+        <article class="news-card">
+          <img [src]="item.img" [alt]="item.titulo">
+          <h3>{{ item.titulo }}</h3>
+        </article>
+      }
+    </div>
+    <p><strong>Facebook:</strong> Visite nuestra página de Facebook</p>
+  </section>
+
+  <section id="facebook-posts">
+    <h2>Facebook posts</h2>
+    <div class="info-card">Contenido social integrado (réplica visual).</div>
+  </section>
+
+  <section id="facebook">
+    <h2>Facebook</h2>
+    <p><a href="#">Visite nuestra página de Facebook</a></p>
+  </section>
+
+  <section id="opiniones">
+    <h2>Opiniones</h2>
+    <div class="quick-links">
+      @for (item of opiniones; track item) {
+        <a href="#">{{ item }}</a>
+      }
+    </div>
+  </section>
+
+  <section id="tour-virtual">
+    <h2>Tour virtual</h2>
+    <p>Próximamente añadiremos esta sección en la réplica Angular.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Dónde estamos</h2>
+    <p>Calle Melquiades Álvarez 26, Oviedo, Asturias 33003, ESP</p>
+    <p><strong>Teléfonos:</strong> 98 520 41 25 - 617 26 29 35</p>
+    <p><strong>Email:</strong> lydiagarciaalvarez&#64;yahoo.es</p>
+    <p><strong>Horario:</strong> Lun - Vie 10:00 - 20:00 | Sábado 10:00 - 14:00</p>
+    <p><strong>Opiniones:</strong> Escribir opinión en Google | Escribir opinión en Facebook</p>
+    <p><a href="#">Find Us</a> | <a href="#">Te llamamos nosotros</a> | <a href="#">Abrir correo</a></p>
+    <h3>Contacta con nosotros</h3>
+    <p>Llámenos | Te llamamos nosotros | Mándanos un mail</p>
+    <h3>Horario</h3>
+    <p>Lun - Vie: 10:00 - 20:00</p>
+    <p>Sábado: 10:00 - 14:00</p>
+    <p>Domingo: Cerrado</p>
+  </section>
+
+  <section>
+    <h2>Enlaces destacados</h2>
+    <ul class="seo-list">
+      @for (item of seoLinks; track item) {
+        <li><a href="#">{{ item }}</a></li>
+      }
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    @for (item of legalLinks; track item) {
+      <a href="#">{{ item }}</a>
+    }
+  </div>
+</footer>
