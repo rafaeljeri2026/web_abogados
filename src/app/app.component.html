@@ -1,0 +1,124 @@
+<nav class="navbar">
+  <div class="container nav-content">
+    <a class="logo-wrap" [routerLink]="['/']" fragment="inicio">
+      <img src="/assets/site/logo.png" alt="Lydia García, Abogada">
+    </a>
+
+    <button
+      type="button"
+      class="mobile-menu-toggle"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="mobileMenuOpen"
+      aria-label="Abrir menú"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <button
+      type="button"
+      class="menu-backdrop"
+      [class.visible]="mobileMenuOpen"
+      (click)="closeMobileMenu()"
+      aria-label="Cerrar menú"
+      tabindex="-1"
+    ></button>
+
+    <div class="menu" [class.menu-open]="mobileMenuOpen">
+      @for (item of topMenu; track item.label) {
+        @if (item.route) {
+          <a [routerLink]="item.route" (click)="closeMobileMenu()">{{ item.label }}</a>
+        } @else if (item.label === 'Conócenos') {
+          <div class="dropdown">
+            <a class="dropdown-trigger" [routerLink]="['/']" [fragment]="item.fragment">
+              {{ item.label }} <span class="caret">^</span>
+            </a>
+            <div class="dropdown-menu">
+              @for (sub of aboutLinks; track sub.label) {
+                <a [routerLink]="['/']" [fragment]="sub.fragment" (click)="closeMobileMenu()">{{ sub.label }}</a>
+              }
+            </div>
+          </div>
+        } @else {
+          <a [routerLink]="['/']" [fragment]="item.fragment" (click)="closeMobileMenu()">{{ item.label }}</a>
+        }
+      }
+      <a [href]="whatsappHref" target="_blank" rel="noreferrer" class="whatsapp-pill" aria-label="WhatsApp">
+        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.11 17.36c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.28-.78-.7-1.31-1.56-1.46-1.82-.15-.26-.02-.4.11-.53.12-.12.26-.32.39-.48.13-.16.17-.26.26-.43.09-.17.04-.32-.02-.45-.07-.13-.58-1.4-.79-1.92-.21-.5-.43-.43-.58-.44l-.49-.01c-.17 0-.45.06-.69.32-.24.26-.92.9-.92 2.19s.95 2.54 1.08 2.71c.13.17 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.08 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.5-.3z"/>
+          <path fill="currentColor" d="M16.02 3C9.4 3 4 8.35 4 14.93c0 2.18.6 4.31 1.74 6.15L4 29l8.12-1.69a12.05 12.05 0 0 0 3.9.64h.01C22.66 27.95 28 22.6 28 16.02 28 9.45 22.64 3 16.02 3zm0 22.03h-.01a9.9 9.9 0 0 1-3.38-.59l-.24-.08-4.82 1.01 1.02-4.71-.16-.24a9.95 9.95 0 0 1-1.52-5.19C6.91 10.68 11.32 6.3 16.02 6.3c5.45 0 9.67 4.58 9.67 9.72 0 5.38-4.34 9.01-9.67 9.01z"/>
+        </svg>
+        <span class="sr-only">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-frame">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <h2>Dónde estamos</h2>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Dirección</h3>
+          <p>Calle Melquiades Álvarez 26 2do. A, Oviedo, Asturias 33003, ESP</p>
+          <a class="footer-button" href="https://www.google.com/maps/dir/?api=1&destination=Calle%20Melquiades%20%C3%81lvarez%2026%202do.%20A%2C%20Oviedo%2C%20Asturias%2033003%2C%20ESP" target="_blank" rel="noreferrer">Find Us</a>
+          <div class="social-icons" aria-label="Redes sociales">
+            <span>f</span>
+            <span>ig</span>
+          </div>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h3>Contacta con nosotros</h3>
+          <a class="footer-button" [href]="phoneHref">Llámenos</a>
+          <a class="footer-button" [href]="phoneHref">Llámenos</a>
+          <a class="footer-button" [href]="whatsappHref" target="_blank" rel="noreferrer">Te llamamos nosotros</a>
+          <a class="mail-link" [href]="emailHref">Mándanos un mail</a>
+        </div>
+
+        <div class="footer-col footer-hours">
+          <h3>Horario</h3>
+          <div class="hours-row"><span>Lun - Vie</span><strong>10:00 - 20:00</strong></div>
+          <div class="hours-row"><span>Sábado</span><strong>10:00 - 14:00</strong></div>
+          <div class="hours-row"><span>Domingo</span><strong>Cerrado</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-links-band">
+    <div class="container">
+      <ul class="seo-links">
+        @for (item of seoLinks; track item) {
+          <li><a href="#">{{ item }}</a></li>
+        }
+      </ul>
+
+      <div class="legal-links">
+        @for (item of legalLinks; track item) {
+          <a href="#">{{ item }}</a>
+        }
+      </div>
+
+      <div class="institution-logos" aria-label="Logos institucionales">
+        <span class="logo-box eu">Financiado por la Unión Europea<br><strong>NextGenerationEU</strong></span>
+        <span class="logo-box gov">Gobierno de España</span>
+        <span class="logo-box kit">KIT DIGITAL</span>
+        <span class="logo-box red">red.es</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="floating-whatsapp" [href]="whatsappHref" target="_blank" rel="noreferrer" aria-label="Abrir WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M19.11 17.36c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.28-.78-.7-1.31-1.56-1.46-1.82-.15-.26-.02-.4.11-.53.12-.12.26-.32.39-.48.13-.16.17-.26.26-.43.09-.17.04-.32-.02-.45-.07-.13-.58-1.4-.79-1.92-.21-.5-.43-.43-.58-.44l-.49-.01c-.17 0-.45.06-.69.32-.24.26-.92.9-.92 2.19s.95 2.54 1.08 2.71c.13.17 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.08 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.5-.3z"/>
+    <path fill="currentColor" d="M16.02 3C9.4 3 4 8.35 4 14.93c0 2.18.6 4.31 1.74 6.15L4 29l8.12-1.69a12.05 12.05 0 0 0 3.9.64h.01C22.66 27.95 28 22.6 28 16.02 28 9.45 22.64 3 16.02 3zm0 22.03h-.01a9.9 9.9 0 0 1-3.38-.59l-.24-.08-4.82 1.01 1.02-4.71-.16-.24a9.95 9.95 0 0 1-1.52-5.19C6.91 10.68 11.32 6.3 16.02 6.3c5.45 0 9.67 4.58 9.67 9.72 0 5.38-4.34 9.01-9.67 9.01z"/>
+  </svg>
+</a>

@@ -1,0 +1,269 @@
+<section class="hero" id="inicio">
+  <div class="container hero-content">
+    <p class="eyebrow">Abogada especializada en derecho familiar</p>
+    <h1>Lydia García, Abogada</h1>
+    <p class="hero-copy">
+      -Más de 25 años de experiencia  
+    <br>
+    
+       -Miembro de la  AEAFA  
+    </p>
+   <img class="hero-badge-logo" src="/assets/site/logoAEAFA.jpg" alt="Asociación Española de Abogados de Familia (AEAFA)">
+
+    <div class="hero-actions">
+      <a class="btn btn-solid" [href]="phoneHref">Llámanos</a>
+      <a class="btn btn-outline" [href]="whatsappHref" target="_blank" rel="noreferrer">Escríbenos</a>
+      <a class="btn btn-outline" routerLink="/servicios">Ver servicios</a>
+    </div>
+
+
+  </div>
+</section>
+
+<main>
+  
+  <section class="section band" id="conocenos">
+    <div class="container">
+      
+      <div class="section-head">
+        <p class="section-kicker">Conócenos</p>
+        <h2>VALOR DIFERENCIAL</h2>
+      </div>
+
+      <div class="feature-grid">
+         <article class="feature-card">
+          <img src="assets/site/experiencia.webp" alt="Galería de imágenes">
+          <div class="feature-card-body">
+            <h3>
+              Más de 25 años de experiencia
+            </h3>
+           </div>
+        </article>
+        <article class="feature-card">
+          <img src="/assets/site/logoAEAFA.jpg" alt="Asociación Española de Abogados de Familia (AEAFA)">
+          <div class="feature-card-body">
+            <h3>
+              Miembro de AEAFA
+            </h3>
+           </div>
+        </article>
+        <article class="feature-card">
+          <img src="/assets/site/galeria06.webp" alt="Mediación civil y mercantil">
+          <div class="feature-card-body">
+            <h3>MEDIACION CIVIL Y MERCANTIL</h3>
+           </div>
+        </article>
+   
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Servicios</p>
+        <h2>Áreas de práctica destacadas</h2>
+      </div>
+
+      <div class="services-grid">
+        @for (item of services; track item.title) {
+        <a class="service-card" [routerLink]="['/servicios', item.slug]">
+          <img [src]="item.image" [alt]="item.title">
+          <span>{{ item.title }}</span>
+        </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galeria">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Galería de imágenes</p>
+      </div>
+
+      <div class="gallery-grid">
+        @for (foto of gallery; track foto.title) {
+        <button type="button" class="gallery-card" (click)="openImage(foto)">
+          <img [src]="foto.img" [alt]="foto.title">
+          <span>{{ foto.title }}</span>
+        </button>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="videos">
+    <div class="container split">
+      <div>
+        <div class="section-head">
+          <p class="section-kicker">Galería de vídeos</p>
+          <h2>Espacio preparado para vídeos y contenido audiovisual</h2>
+        </div>
+        <p class="muted">He dejado un video de ejemplo relacionado con abogados para que esta sección ya tenga vida y se
+          vea integrada en el diseño.</p>
+      </div>
+      <div class="video-panel">
+        <iframe
+          class="video-panel-embed"
+          src="https://www.youtube.com/embed/HYitX1lqeaE?autoplay=1&mute=1&loop=1&playlist=HYitX1lqeaE&controls=1&rel=0"
+          title="Video de consulta inicial con un abogado"
+          loading="lazy"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <div class="video-panel-caption">
+          <p>Videos</p>
+          <span>Consulta inicial con un abogado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="section" id="noticias">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Noticias</p>
+        <h2>Actualidad y publicaciones</h2>
+      </div>
+
+      <div class="news-grid">
+        @for (item of news; track item.title) {
+          <article class="news-card">
+            <img [src]="item.img" [alt]="item.title">
+            <h3>{{ item.title }}</h3>
+          </article>
+        }
+      </div>
+
+      <section class="social-block">
+        <h3>Facebook posts</h3>
+        <div class="info-card">Contenido social integrado en el diseño.</div>
+      </section>
+
+      <section class="social-block">
+        <h3>Facebook</h3>
+        <p><a href="https://facebook.com" target="_blank" rel="noreferrer">Visite nuestra página de Facebook</a></p>
+      </section>
+    </div>
+  </section> -->
+
+  <section class="section" id="opiniones">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Opiniones</p>
+        <h2>Reputación y confianza</h2>
+      </div>
+
+      <div class="pill-row">
+        <a href="#contacto" (click)="$event.preventDefault(); scrollTo('contacto')">Escribir opinión en Google</a>
+        <a href="#contacto" (click)="$event.preventDefault(); scrollTo('contacto')">Escribir opinión en Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tour-virtual">
+    <div class="container split">
+      <div>
+        <div class="section-head">
+          <p class="section-kicker">Tour virtual</p>
+          <h2>Listo para incorporar un recorrido virtual</h2>
+        </div>
+        <p class="muted">Podemos enlazar aquí un tour 360 o una visita virtual del despacho cuando me lo compartas.</p>
+      </div>
+      <div class="placeholder-panel compact">
+        <p>Tour</p>
+        <span>Virtual</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contacto">
+    <div class="container contact-grid">
+      <div class="contact-copy">
+        <div class="section-head">
+          <p class="section-kicker">Dónde estamos</p>
+          <h2>Dirección y contacto directo</h2>
+        </div>
+
+        <div class="contact-stack">
+          <div class="contact-line">
+            <span>Dirección</span>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Calle%20Melquiades%20%C3%81lvarez%2026%202do.%20A%2C%20Oviedo%2C%20Asturias%2033003%2C%20ESP"
+              target="_blank" rel="noreferrer">
+              Calle Melquiades Álvarez 26 2do. A, Oviedo, Asturias 33003, ESP
+            </a>
+          </div>
+          <div class="contact-line">
+            <span>Teléfono</span>
+            <a [href]="phoneHref">617 26 29 35</a>
+          </div>
+          <div class="contact-line">
+            <span>Email</span>
+            <a [href]="emailHref">lydiagarciaalvarez&#64;yahoo.es</a>
+            <button type="button" class="text-action" (click)="copyEmail()">
+              {{ copiedEmail ? 'Correo copiado' : 'Copiar mail' }}
+            </button>
+          </div>
+          <div class="contact-line">
+            <span>Horario</span>
+            <strong>¡Consúltanos!</strong>
+          </div>
+        </div>
+
+        <div class="hero-actions contact-actions">
+          <a class="btn btn-solid" [href]="phoneHref">Llámenos</a>
+          <a class="btn btn-outline" [href]="whatsappHref" target="_blank" rel="noreferrer">Te llamamos nosotros</a>
+          <a class="btn btn-outline"
+            href="https://www.google.com/maps/dir/?api=1&destination=Calle%20Melquiades%20%C3%81lvarez%2026%202do.%20A%2C%20Oviedo%2C%20Asturias%2033003%2C%20ESP"
+            target="_blank" rel="noreferrer">Find Us</a>
+        </div>
+      </div>
+
+      <a class="map-card"
+        href="https://www.google.com/maps/dir/?api=1&destination=Calle%20Melquiades%20%C3%81lvarez%2026%202do.%20A%2C%20Oviedo%2C%20Asturias%2033003%2C%20ESP"
+        target="_blank" rel="noreferrer" aria-label="Abrir dirección en Google Maps">
+        <iframe
+          class="map-card-embed"
+          title="Mapa de Calle Melquiades Álvarez 26, Oviedo"
+          src="https://www.google.com/maps?q=Calle%20Melquiades%20%C3%81lvarez%2026%202do.%20A%2C%20Oviedo%2C%20Asturias%2033003%2C%20ESP&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="map-card-inner">
+          <p>Haz clic para abrir la ruta</p>
+          <h3>Melquiades Álvarez 26 2do. A</h3>
+          <span>Oviedo, Asturias</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section seo-section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Enlaces destacados</p>
+        <h2>Servicios relacionados</h2>
+      </div>
+
+      <ul class="seo-list">
+        @for (item of seoLinks; track item) {
+        <li><a href="#contacto" (click)="$event.preventDefault(); scrollTo('contacto')">{{ item }}</a></li>
+        }
+      </ul>
+    </div>
+  </section>
+</main>
+
+@if (selectedImage) {
+<div class="lightbox" (click)="closeImage()">
+  <div class="lightbox-panel" (click)="$event.stopPropagation()">
+    <img [src]="selectedImage.img" [alt]="selectedImage.title">
+    <div class="lightbox-body">
+      <h3>{{ selectedImage.title }}</h3>
+      <p>Haz clic fuera de la imagen para cerrar.</p>
+    </div>
+    <button type="button" class="close-lightbox" (click)="closeImage()">Cerrar</button>
+  </div>
+</div>
+}

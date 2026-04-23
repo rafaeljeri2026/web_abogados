@@ -1,0 +1,80 @@
+<section class="service-page">
+  <div class="container">
+    <h1>{{ service.title }}</h1>
+
+    <div class="detail-layout">
+      <article class="detail-media">
+        <div class="media-shell">
+          <img [src]="service.image" [alt]="service.title">
+        </div>
+
+        <p class="detail-text">{{ service.summary }}</p>
+        <p class="detail-text">{{ service.intro }}</p>
+
+        <div class="detail-subsection">
+          <h3>Áreas incluidas</h3>
+          <ul class="detail-list">
+            @for (point of service.highlights; track point) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+        </div>
+      </article>
+
+      <section class="detail-form">
+        <form class="contact-form" (ngSubmit)="submitForm()">
+          <label>
+            <span>Nombre: *</span>
+            <input type="text" name="name" [(ngModel)]="formData.name" required>
+          </label>
+
+          <label>
+            <span>Correo: *</span>
+            <input type="email" name="email" [(ngModel)]="formData.email" required>
+          </label>
+
+          <label>
+            <span>Teléfono</span>
+            <input type="tel" name="phone" [(ngModel)]="formData.phone">
+          </label>
+
+          <label class="message-field">
+            <span>Mensaje: *</span>
+            <textarea name="message" rows="5" [(ngModel)]="formData.message" required></textarea>
+          </label>
+
+          <label class="policy-line">
+            <input type="checkbox" name="acceptedPolicy" [(ngModel)]="acceptedPolicy">
+            <span>He leído y acepto la <a href="#">política de protección de datos</a></span>
+          </label>
+
+          <button
+            type="submit"
+            class="send-button"
+            [disabled]="sending || !acceptedPolicy"
+          >
+            {{ sending ? 'Enviando...' : (acceptedPolicy ? 'Enviar mensaje' : 'Completa la verificación') }}
+          </button>
+
+          @if (sent) {
+            <p class="form-feedback success">Tu solicitud fue enviada correctamente.</p>
+          }
+
+          @if (errorMessage) {
+            <p class="form-feedback error">{{ errorMessage }}</p>
+          }
+        </form>
+      </section>
+    </div>
+
+    @if (showSuccessPopup) {
+      <div class="success-popup" role="dialog" aria-modal="true" aria-labelledby="service-success-title">
+        <div class="success-popup-card">
+          <h3 id="service-success-title">Mensaje enviado</h3>
+          <p>Tu consulta sobre {{ service.title }} se envió correctamente.</p>
+          <button type="button" class="success-popup-button" (click)="dismissSuccessPopup()">Aceptar</button>
+        </div>
+      </div>
+    }
+  </div>
+</section>

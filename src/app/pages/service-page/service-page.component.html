@@ -1,0 +1,97 @@
+<section class="service-page">
+  <div class="container">
+    <h1>{{ service.title }}</h1>
+
+    <div class="detail-subsection">
+      <h3>Servicios incluidos</h3>
+      <div class="subservice-grid">
+        @for (point of service.subservices; track point.title) {
+          <button type="button" class="subservice-card" (click)="openContact(point)">
+            <img [src]="point.image" [alt]="point.title">
+            <div class="subservice-copy">
+              <span class="subservice-title">{{ point.title }}</span>
+            </div>
+          </button>
+        }
+      </div>
+    </div>
+
+    @if (contactModalOpen) {
+      <div class="success-popup" role="dialog" aria-modal="true">
+        <div class="success-popup-card contact-popup">
+          <button type="button" class="modal-close" (click)="closeContact()" aria-label="Cerrar">X</button>
+
+          <div class="modal-shell modal-grid">
+            <article class="modal-media">
+              <div class="media-shell">
+                <img [src]="selectedSubservice?.image" [alt]="selectedSubservice?.title">
+              </div>
+              <p class="modal-description">{{ selectedSubservice?.description }}</p>
+            </article>
+
+            <section class="modal-form-panel">
+              <div class="modal-icon" aria-hidden="true">⚖</div>
+              <h3>{{ selectedSubservice?.title }}</h3>
+
+              <form class="contact-form" (ngSubmit)="submitForm()">
+                <label>
+                  <span>Nombre: *</span>
+                  <input type="text" name="name" [(ngModel)]="formData.name" required>
+                </label>
+
+                <label>
+                  <span>Correo: *</span>
+                  <input type="email" name="email" [(ngModel)]="formData.email" required>
+                </label>
+
+                <label>
+                  <span>Teléfono</span>
+                  <input type="tel" name="phone" [(ngModel)]="formData.phone">
+                </label>
+
+                <label class="message-field">
+                  <span>Mensaje: *</span>
+                  <textarea name="message" rows="5" [(ngModel)]="formData.message" required></textarea>
+                </label>
+
+                <label class="policy-line">
+                  <input type="checkbox" name="acceptedPolicy" [(ngModel)]="acceptedPolicy">
+                  <span>He leído y acepto la <a href="#">política de protección de datos</a></span>
+                </label>
+
+                <div class="action-row">
+                  <button type="button" class="secondary-button" (click)="closeContact()">Cancelar</button>
+                  <button
+                    type="submit"
+                    class="send-button"
+                    [disabled]="sending || !acceptedPolicy"
+                  >
+                    {{ sending ? 'Enviando...' : 'Enviar mensaje' }}
+                  </button>
+                </div>
+
+                @if (sent) {
+                  <p class="form-feedback success">Tu solicitud fue enviada correctamente.</p>
+                }
+
+                @if (errorMessage) {
+                  <p class="form-feedback error">{{ errorMessage }}</p>
+                }
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+    }
+
+    @if (showSuccessPopup) {
+      <div class="success-popup" role="dialog" aria-modal="true" aria-labelledby="service-success-title">
+        <div class="success-popup-card">
+          <h3 id="service-success-title">Mensaje enviado</h3>
+          <p>Tu consulta sobre {{ selectedSubservice?.title }} se envió correctamente.</p>
+          <button type="button" class="success-popup-button" (click)="dismissSuccessPopup()">Aceptar</button>
+        </div>
+      </div>
+    }
+  </div>
+</section>
