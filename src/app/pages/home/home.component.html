@@ -3,17 +3,24 @@
     <p class="eyebrow">Abogada especializada en derecho familiar</p>
     <h1>Lydia García, Abogada</h1>
     <p class="hero-copy">
-      -Más de 25 años de experiencia  
-    <br>
-    
-       -Miembro de la  AEAFA  
+      ✔ Más de 25 años de experiencia.
     </p>
-   <img class="hero-badge-logo" src="/assets/site/logoAEAFA.jpg" alt="Asociación Española de Abogados de Familia (AEAFA)">
-
+    <p class="hero-copy">
+      ✔ Mediador Civil y Mercantil.
+    </p>
+    <p class="hero-copy">
+      ✔ Miembro de la <br>
+      <img 
+        class="hero-badge-logo" 
+        src="/assets/site/logoAEAFA_3.png" 
+        alt="Asociación Española de Abogados de Familia (AEAFA)">
+    </p>
+    
+   
     <div class="hero-actions">
       <a class="btn btn-solid" [href]="phoneHref">Llámanos</a>
-      <a class="btn btn-outline" [href]="whatsappHref" target="_blank" rel="noreferrer">Escríbenos</a>
-      <a class="btn btn-outline" routerLink="/servicios">Ver servicios</a>
+      <a class="btn btn-whatsapp" [href]="whatsappHref" target="_blank" rel="noreferrer">WhatsApp</a>
+      
     </div>
 
 
@@ -22,7 +29,7 @@
 
 <main>
   
-  <section class="section band" id="conocenos">
+  <!-- <section class="section band" id="conocenos">
     <div class="container">
       
       <div class="section-head">
@@ -57,12 +64,12 @@
       </div>
     </div>
   </section>
-
+ -->
   <section class="section" id="servicios">
     <div class="container">
       <div class="section-head">
         <p class="section-kicker">Servicios</p>
-        <h2>Áreas de práctica destacadas</h2>
+        <h2>ÁREAS DESTACADAS</h2>
       </div>
 
       <div class="services-grid">
@@ -76,24 +83,24 @@
     </div>
   </section>
 
-  <section class="section" id="galeria">
+  <section class="section" id="imagenes">
     <div class="container">
       <div class="section-head">
-        <p class="section-kicker">Galería de imágenes</p>
+        <p class="section-kicker">Imágenes</p>
       </div>
 
       <div class="gallery-grid">
         @for (foto of gallery; track foto.title) {
         <button type="button" class="gallery-card" (click)="openImage(foto)">
           <img [src]="foto.img" [alt]="foto.title">
-          <span>{{ foto.title }}</span>
+          <!-- <span>{{ foto.title }}</span> -->
         </button>
         }
       </div>
     </div>
   </section>
 
-  <section class="section" id="videos">
+<!--   <section class="section" id="videos">
     <div class="container split">
       <div>
         <div class="section-head">
@@ -118,7 +125,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- <section class="section" id="noticias">
     <div class="container">
@@ -147,38 +154,81 @@
       </section>
     </div>
   </section> -->
-
   <section class="section" id="opiniones">
     <div class="container">
-      <div class="section-head">
-        <p class="section-kicker">Opiniones</p>
-        <h2>Reputación y confianza</h2>
-      </div>
-
-      <div class="pill-row">
-        <a href="#contacto" (click)="$event.preventDefault(); scrollTo('contacto')">Escribir opinión en Google</a>
-        <a href="#contacto" (click)="$event.preventDefault(); scrollTo('contacto')">Escribir opinión en Facebook</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="tour-virtual">
-    <div class="container split">
-      <div>
-        <div class="section-head">
-          <p class="section-kicker">Tour virtual</p>
-          <h2>Listo para incorporar un recorrido virtual</h2>
+  
+      <div class="opiniones-layout">
+  
+        <!-- IZQUIERDA -->
+        <div class="opiniones-content">
+  
+          <div class="section-head">
+            <p class="section-kicker">Opiniones</p>
+            <h2>Reputación y confianza</h2>
+          </div>
+  
+          <div class="reviews-header">
+            <div class="rating-summary">
+              <div class="stars-rating">
+                <span class="full">★</span>
+                <span class="full">★</span>
+                <span class="full">★</span>
+                <span class="full">★</span>
+                <span class="half">★</span>
+  
+                <strong>4.5 / 5</strong>
+              </div>
+            </div>
+          </div>
+  
+          <div class="reviews-grid">
+            <br>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>“Excelente profesional, cercana, clara en sus explicaciones y muy eficaz.”</p>
+              <span>Cliente verificado</span>
+            </article>
+            <br>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>“Muy recomendable. Gran trato humano y resultados impecables.”</p>
+              <span>Cliente verificado</span>
+            </article>
+            <br>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>“Atención impecable, rapidez y total confianza desde el primer momento.”</p>
+              <span>Cliente verificado</span>
+            </article>
+            <br>
+          </div>
+  
+          <div class="reviews-footer">
+            <a
+              class="btn btn-solid"
+              href="https://www.google.com/search?sca_esv=7aba92e595da3466&hl=es-PE&gl=pe&sxsrf=ANbL-n4mPVagKQ44eY-VUs21SIxgDG8yUQ:1777051144396&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOYqvb1tynvg2lhbigB_IG84mDKvr5E4kJGfr9j3N3t4Q7eXIk90njEQvahq_6a7CFcHUSzhJvjrJFGDh8QBEy0NsZzXCS4Lmd68SGF2koOzROQLakw%3D%3D&q=Lydia+Garc%C3%ADa,+Abogada+Opiniones&sa=X&ved=2ahUKEwivlNax_4aUAxUerZUCHU-KEoQQ0bkNegQIIxAH&biw=1920&bih=911&dpr=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver todas las reseñas en Google
+            </a>
+          </div>
+  
         </div>
-        <p class="muted">Podemos enlazar aquí un tour 360 o una visita virtual del despacho cuando me lo compartas.</p>
+  
+        <!-- DERECHA -->
+        <div class="opiniones-image">
+          <img src="/assets/site/satisfaccion.png" alt="Clientes satisfechos">
+        </div>
+  
       </div>
-      <div class="placeholder-panel compact">
-        <p>Tour</p>
-        <span>Virtual</span>
-      </div>
+  
     </div>
   </section>
 
-  <section class="section contact-section" id="contacto">
+
+
+  <section class="section " id="contacto">
     <div class="container contact-grid">
       <div class="contact-copy">
         <div class="section-head">
@@ -201,22 +251,19 @@
           <div class="contact-line">
             <span>Email</span>
             <a [href]="emailHref">lydiagarciaalvarez&#64;yahoo.es</a>
-            <button type="button" class="text-action" (click)="copyEmail()">
+            <!-- <button type="button" class="text-action" (click)="copyEmail()">
               {{ copiedEmail ? 'Correo copiado' : 'Copiar mail' }}
-            </button>
+            </button> -->
           </div>
           <div class="contact-line">
             <span>Horario</span>
-            <strong>¡Consúltanos!</strong>
+            <strong>Lun - Vie  10:00 - 20:00</strong>
           </div>
         </div>
 
         <div class="hero-actions contact-actions">
           <a class="btn btn-solid" [href]="phoneHref">Llámenos</a>
-          <a class="btn btn-outline" [href]="whatsappHref" target="_blank" rel="noreferrer">Te llamamos nosotros</a>
-          <a class="btn btn-outline"
-            href="https://www.google.com/maps/dir/?api=1&destination=Calle%20Melquiades%20%C3%81lvarez%2026%202do.%20A%2C%20Oviedo%2C%20Asturias%2033003%2C%20ESP"
-            target="_blank" rel="noreferrer">Find Us</a>
+          <a class="btn btn-whatsapp" [href]="whatsappHref" target="_blank" rel="noreferrer">WhatsApp</a>
         </div>
       </div>
 
@@ -239,7 +286,7 @@
     </div>
   </section>
 
-  <section class="section seo-section">
+  <!-- <section class="section seo-section">
     <div class="container">
       <div class="section-head">
         <p class="section-kicker">Enlaces destacados</p>
@@ -252,18 +299,14 @@
         }
       </ul>
     </div>
-  </section>
+  </section> -->
 </main>
 
 @if (selectedImage) {
 <div class="lightbox" (click)="closeImage()">
   <div class="lightbox-panel" (click)="$event.stopPropagation()">
     <img [src]="selectedImage.img" [alt]="selectedImage.title">
-    <div class="lightbox-body">
-      <h3>{{ selectedImage.title }}</h3>
-      <p>Haz clic fuera de la imagen para cerrar.</p>
-    </div>
-    <button type="button" class="close-lightbox" (click)="closeImage()">Cerrar</button>
+    <button type="button" class="close-lightbox" (click)="closeImage()"></button>
   </div>
 </div>
 }

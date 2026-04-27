@@ -22,8 +22,8 @@ export type MenuItem = {
 
 export const TOP_MENU: MenuItem[] = [
   { label: 'Inicio', fragment: 'inicio' },
-  { label: 'Conócenos', fragment: 'conocenos' },
-  { label: 'Servicios', route: '/servicios' },
+  { label: 'Servicios', fragment: 'servicios' },
+  { label: 'Imágenes', fragment: 'imagenes' },
   { label: 'Contacto', fragment: 'contacto' }
 ];
 
@@ -243,17 +243,9 @@ export const SERVICES: ServiceItem[] = [
 ];
 
 export const GALLERY = [
-  { title: 'Asesoramiento jurídico eficaz', img: '/assets/site/hero-main.jpg' },
-  { title: 'Demandas de divorcio en Oviedo', img: '/assets/site/galeria1.webp' },
-  { title: 'Abogada con alto nivel de cualificación y mucha experiencia', img: '/assets/site/galeria03.webp' },
-  { title: 'Lydia García, abogada', img: '/assets/site/galeria04.webp' },
-  { title: 'Abogados especialistas en arrendamientos en Oviedo', img: '/assets/site/servicio4.jpg' },
-  { title: 'Abogados especialistas en accidentes de tráfico en Oviedo', img: '/assets/site/hero.jpg' },
-  { title: 'Abogado concursal en Oviedo', img: '/assets/site/servicio7.jpg' },
-  { title: 'Abogado especialista en divorcios en Oviedo', img: '/assets/site/servicio8.jpg' },
-  { title: 'Nulidades matrimoniales en Oviedo', img: '/assets/site/servicio9.jpg' },
-  { title: 'Abogado especialista en separaciones en Oviedo', img: '/assets/site/galeria05.webp' },
-  { title: 'Reclamación de seguros en Oviedo', img: '/assets/site/galeria06.webp' }
+  { title: 'Asesoramiento jurídico eficaz', img: '/assets/site/lydia01.png' },
+  { title: 'Demandas de divorcio en Oviedo', img: '/assets/site/lydia02.png' },
+  { title: 'Abogada con alto nivel de cualificación y mucha experiencia', img: '/assets/site/lydia03.png' },
 ];
 
 export const NEWS = [

@@ -181,8 +181,8 @@
 
 .footer-top {
   background:
-    radial-gradient(circle at 20% 0%, rgba(167, 123, 103, 0.16), transparent 26%),
-    linear-gradient(180deg, #2b2724, #231f1d);
+    radial-gradient(circle at 20% 0%, rgba(167, 103, 103, 0.16), transparent 26%),
+    linear-gradient(180deg, #7a2230, #231f1d);
   padding: 3.6rem 0 3rem;
 }
 
@@ -231,8 +231,25 @@
   min-height: 50px;
   min-width: 180px;
   margin-top: 1rem;
+  margin-left: 0.5rem;
   border-radius: 999px;
-  background: #a77b67;
+  background: #8b2835;
+  color: #fff;
+  padding: 0.75rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 14px 26px rgba(167, 123, 103, 0.18);
+}
+
+.footer-button_w {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  min-width: 180px;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  border-radius: 999px;
+  background: #1faa59;
   color: #fff;
   padding: 0.75rem 1.2rem;
   text-align: center;
@@ -245,6 +262,8 @@
 
 .social-icons {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 0.75rem;
   margin-top: 1.2rem;
   font-size: 1.05rem;
@@ -326,7 +345,6 @@
 }
 
 .institution-logos {
-  display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
   align-items: stretch;
