@@ -1,6 +1,6 @@
 <nav class="navbar">
   <div class="container nav-content">
-    <a class="logo-wrap" [routerLink]="['/']" fragment="inicio">
+    <a class="logo-wrap" [routerLink]="['/']" route="/">
       <img src="/assets/site/logo_1.png" alt="Lydia García, Abogada">
     </a>
 
@@ -99,18 +99,18 @@
         }
       </ul>
  -->
-      <div class="legal-links">
-        @for (item of legalLinks; track item) {
-          <a href="#">{{ item }}</a>
-        }
-      </div>
+ <div class="legal-links">
+  @for (item of legalLinks; track item.text) {
+    <a [routerLink]="item.url">{{ item.text }}</a>
+  }
+</div>
 
-      <div class="institution-logos" aria-label="Logos institucionales">
+      <!-- <div class="institution-logos" aria-label="Logos institucionales">
         <img 
         class="" 
         src="/assets/site/logos.png" 
         alt="Asociación Española de Abogados de Familia (AEAFA)">
-      </div>
+      </div> -->
     </div>
   </div>
 </footer>

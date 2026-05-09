@@ -1,16 +1,16 @@
 <section class="service-page">
   <div class="container">
-    <h1>{{ service.title }}</h1>
+   
 
     <div class="detail-subsection">
-      <h3>Servicios incluidos</h3>
-      <div class="subservice-grid">
+<!--       <h3>Servicios incluidos</h3>
+ -->      <div class="subservice-grid">
         @for (point of service.subservices; track point.title) {
           <button type="button" class="subservice-card" (click)="openContact(point)">
-            <img [src]="point.image" [alt]="point.title">
             <div class="subservice-copy">
               <span class="subservice-title">{{ point.title }}</span>
             </div>
+            <img [src]="point.image" [alt]="point.title">
           </button>
         }
       </div>
@@ -56,7 +56,7 @@
 
                 <label class="policy-line">
                   <input type="checkbox" name="acceptedPolicy" [(ngModel)]="acceptedPolicy">
-                  <span>He leído y acepto la <a href="#">política de protección de datos</a></span>
+                  <span>He leído y acepto la <a href="/privacidad">política de protección de datos</a></span>
                 </label>
 
                 <div class="action-row">

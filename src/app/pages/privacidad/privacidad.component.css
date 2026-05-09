@@ -17,6 +17,14 @@
   color: #241c19;
 }
 
+.service-page h2 {
+  margin: 0 0 1.25rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 4vw, 2.2rem);
+  color: #241c19;
+}
+
+
 .detail-subsection {
   margin-top: 0.2rem;
 }
@@ -61,7 +69,6 @@
 
 .subservice-title {
   display: block;
-  font-size: 1.1rem;
   font-weight: 700;
   color: #241c19;
   line-height: 1.4;

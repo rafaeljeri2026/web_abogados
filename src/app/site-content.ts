@@ -21,8 +21,9 @@ export type MenuItem = {
 };
 
 export const TOP_MENU: MenuItem[] = [
-  { label: 'Inicio', fragment: 'inicio' },
+  { label: 'Inicio', route: '/' },
   { label: 'Servicios', fragment: 'servicios' },
+  { label: 'Vídeos', fragment: 'videos' },
   { label: 'Imágenes', fragment: 'imagenes' },
   { label: 'Contacto', fragment: 'contacto' }
 ];
@@ -59,12 +60,12 @@ export const SERVICES: ServiceItem[] = [
       {
         title: 'Divorcios',
         description: 'Tramitamos divorcios de mutuo acuerdo o contenciosos con un enfoque claro y cercano.',
-        image: '/assets/site/Divorcios/divorcio.jpg'
+        image: '/assets/site/Divorcios/divorcio.png'
       },
       {
         title: 'Liquidación gananciales',
         description: 'Ordenamos y defendemos la liquidación del patrimonio común tras la separación.',
-        image: '/assets/site/Divorcios/liquidacion.jpeg'
+        image: '/assets/site/Divorcios/liquidacion.png'
       },
       {
         title: 'Mediación familiar',
@@ -79,12 +80,12 @@ export const SERVICES: ServiceItem[] = [
       {
         title: 'Custodia de menores',
         description: 'Defendemos la custodia y el régimen de visitas con prioridad en el interés del menor.',
-        image: '/assets/site/Divorcios/Custodia de menores.jpeg'
+        image: '/assets/site/Divorcios/Custodia de menores.png'
       },
       {
         title: 'Impago de alimentos',
         description: 'Reclamamos pensiones impagadas y protegemos el derecho de los menores.',
-        image: '/assets/site/Divorcios/Impago de alimentos.jpeg'
+        image: '/assets/site/Divorcios/Impago de alimentos.png'
       },
       {
         title: 'Parejas de hecho',
@@ -94,17 +95,17 @@ export const SERVICES: ServiceItem[] = [
       {
         title: 'Violencia de género',
         description: 'Acompañamiento jurídico inmediato y con máxima sensibilidad en situaciones de riesgo.',
-        image: '/assets/site/Divorcios/Violencia de género.jpeg'
+        image: '/assets/site/Divorcios/Violencia de género.png'
       },
       {
         title: 'Discapacidad y apoyo',
         description: 'Gestionamos medidas de apoyo y protección para personas con discapacidad.',
-        image: '/assets/site/Divorcios/Discapacidad y apoyo.jpeg'
+        image: '/assets/site/Divorcios/Discapacidad y apoyo.png'
       },
       {
         title: 'Adopción y apellidos',
         description: 'Tramitamos expedientes de adopción y cambio de apellidos.',
-        image: '/assets/site/Divorcios/Adopciónyapellidos.jpeg'
+        image: '/assets/site/Divorcios/Adopción y apellidos.png'
       }
     ]
   },
@@ -127,17 +128,17 @@ export const SERVICES: ServiceItem[] = [
       {
         title: 'Testamentos',
         description: 'Redacción, revisión y planificación testamentaria para evitar conflictos futuros.',
-        image: '/assets/Herencias/Testamentos.webp'
+        image: '/assets/Herencias/Testamentos.png'
       },
       {
         title: 'Partición de herencias',
         description: 'Ordenamos la división de bienes y derechos entre herederos.',
-        image: '/assets/Herencias/Partición de herencias.jpeg'
+        image: '/assets/Herencias/Partición de herencias.png'
       },
       {
         title: 'Acuerdos entre herederos',
         description: 'Facilitamos acuerdos equilibrados para reducir la judicialización.',
-        image: '/assets/Herencias/Acuerdos entre herederos.jpeg'
+        image: '/assets/Herencias/Acuerdos entre herederos.png'
       },
       {
         title: 'Demanda de partición',
@@ -147,12 +148,12 @@ export const SERVICES: ServiceItem[] = [
       {
         title: 'Valoración de bienes',
         description: 'Determinamos el valor de los bienes que integran la herencia.',
-        image: '/assets/Herencias/Valoración de bienes.jpeg'
+        image: '/assets/Herencias/Valoración de bienes.png'
       },
       {
         title: 'Impuesto de sucesiones',
         description: 'Liquidamos y gestionamos el impuesto de sucesiones con seguridad jurídica.',
-        image: '/assets/Herencias/Impuesto de sucesiones.jpeg'
+        image: '/assets/Herencias/Impuesto de sucesiones.png'
       }
     ]
   },
@@ -174,27 +175,27 @@ export const SERVICES: ServiceItem[] = [
       {
         title: 'Contratos de arrendamiento',
         description: 'Redacción y revisión de contratos para viviendas, locales y naves.',
-        image: '/assets/Arrendamiento/Contratos de arrendamiento.jpeg'
+        image: '/assets/Arrendamiento/Contratos de arrendamiento.png'
       },
       {
         title: 'Desahucios',
         description: 'Procedimientos de desahucio por impago, precario o vencimiento.',
-        image: '/assets/Arrendamiento/Desahucios.jpeg'
+        image: '/assets/Arrendamiento/Desahucios.png'
       },
       {
         title: 'Reclamación de impagados',
         description: 'Recuperamos cantidades adeudadas vinculadas a alquileres o inmuebles.',
-        image: '/assets/Arrendamiento/Reclamación de impagados.jpeg'
+        image: '/assets/Arrendamiento/Reclamación de impagados.png'
       },
       {
         title: 'Comunidades de bienes',
         description: 'Asesoramiento en la gestión y disolución de comunidades de bienes.',
-        image: '/assets/Arrendamiento/Comunidades de bienes.jpeg'
+        image: '/assets/Arrendamiento/Comunidades de bienes.png'
       },
       {
         title: 'Demandas sobre inmuebles',
         description: 'Defensa en litigios relacionados con propiedades y derechos reales.',
-        image: '/assets/Arrendamiento/Demandas sobre inmuebles.jpeg'
+        image: '/assets/Arrendamiento/Demandas sobre inmuebles.png'
       }
     ]
   },
@@ -221,22 +222,22 @@ export const SERVICES: ServiceItem[] = [
       {
         title: 'Mediación',
         description: 'Buscamos soluciones negociadas antes de ir a juicio.',
-        image: '/assets/Accidentes/Mediación.jpg'
+        image: '/assets/Accidentes/Mediación.png'
       },
       {
         title: 'Accidente de tráfico',
         description: 'Reclamación de indemnización por lesiones y daños materiales.',
-        image: '/assets/Accidentes/Accidente de tráfico.jpeg'
+        image: '/assets/Accidentes/Accidente de tráfico.png'
       },
       {
         title: 'Daños por animales',
         description: 'Defensa en reclamaciones por lesiones causadas por animales.',
-        image: '/assets/Accidentes/Daños por animales.jpeg'
+        image: '/assets/Accidentes/Daños por animales.png'
       },
       {
         title: 'Caídas e indemnización',
         description: 'Evaluamos y reclamamos daños por caídas en espacios públicos o privados.',
-        image: '/assets/Accidentes/Caídas e indemnización.jpeg'
+        image: '/assets/Accidentes/Caídas e indemnización.png'
       }
     ]
   }
@@ -244,8 +245,8 @@ export const SERVICES: ServiceItem[] = [
 
 export const GALLERY = [
   { title: 'Asesoramiento jurídico eficaz', img: '/assets/site/lydia01.png' },
-  { title: 'Demandas de divorcio en Oviedo', img: '/assets/site/lydia02.png' },
   { title: 'Abogada con alto nivel de cualificación y mucha experiencia', img: '/assets/site/lydia03.png' },
+  { title: 'Despacho', img: '/assets/site/despacho_.png' }, 
 ];
 
 export const NEWS = [
@@ -253,12 +254,14 @@ export const NEWS = [
   { title: 'Asesoramiento jurídico eficaz', img: '/assets/site/galeria05.webp' }
 ];
 
-export const LEGAL_LINKS = [
-  'Aviso legal',
-  'Política de privacidad',
-  'Política de cookies',
-  'Declaración accesibilidad',
-  'Política de envío y devoluciones'
+interface LegalLink {
+  text: string;
+  url: string;
+}
+
+export const LEGAL_LINKS: LegalLink[] = [
+  { text: 'Aviso legal', url: '/avisolegal' },
+  { text: 'Política de privacidad', url: '/privacidad' }
 ];
 
 export const SEO_LINKS = [

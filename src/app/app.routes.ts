@@ -6,12 +6,17 @@ import { HerenciasPageComponent } from './pages/herencias-page/herencias-page.co
 import { ArrendamientosPageComponent } from './pages/arrendamientos-page/arrendamientos-page.component';
 import { AccidentesPageComponent } from './pages/accidentes-page/accidentes-page.component';
 
+import { AvisoLegal } from './pages/legal/avisolegal.component';
+import { Privacidad } from './pages/privacidad/privacidad.component';/* import { PoliticaPrivacidad } from './pages/accidentes-page/accidentes-page.component'; */
+
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'servicios/matrimonial-y-familia', component: MatrimonialFamilyPageComponent },
   { path: 'servicios/herencias', component: HerenciasPageComponent },
   { path: 'servicios/arrendamientos', component: ArrendamientosPageComponent },
   { path: 'servicios/accidentes', component: AccidentesPageComponent },
+  { path: 'avisolegal', component: AvisoLegal },
+  { path: 'privacidad', component: Privacidad },
   { path: 'servicios', component: ServicesListComponent, pathMatch: 'full' },
   { path: '**', redirectTo: '' }
 ];

@@ -45,8 +45,8 @@
   margin: 0 0 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 1rem;
-  color: #ff9f76;
+  font-size: 1.5rem;
+  color: #fd9163;
   font-weight: 500;
 }
 
@@ -388,6 +388,18 @@
     radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.2), transparent 24%),
     linear-gradient(145deg, #7f2330, #3a1b1f);
   box-shadow: 0 24px 60px rgba(37, 22, 19, 0.2);
+}
+
+#videos .video-panel {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(700px, 100%);
+  min-height: 0;
+  aspect-ratio: 16/9;
+}
+
+#videos .video-panel-embed {
+  min-height: 0;
 }
 
 .video-panel-embed {
